@@ -2,7 +2,7 @@
 colorSchema: both
 themeConfig:
   appearance: dark
-  shortTitle: "Fórum de Gestão Tecnológica: IA na Gestão de Contratos"
+  shortTitle: "Seu terminal aumentado pelo Claude Code"
 fonts:
   sans: Space Grotesk
   serif: Space Grotesk
@@ -12,12 +12,12 @@ class: text-left
 ---
 
 <CoverSlide
-  eyebrow="Suporte Operacional: Fórum de Gestão Tecnológica"
-  title="Do Dado à Decisão"
-  subtitle="Soluções de IA Ajustadas ao <br>Negócio de Contratação"
+  eyebrow="FGV EAESP"
+  title="Seu terminal aumentado pelo Claude Code"
+  subtitle="Claude code e seu papel no desenvolvimento assistido por IA"
   presenter="R. M. Ferrari"
-  location="Vitória, ES"
-  date="Junho de 2026"
+  location="São Paulo, SP"
+  date="Abril de 2026"
 />
 
 ---
@@ -36,90 +36,6 @@ y="200"
 
 ---
 
-
-
-# Ciência de Dados
-
-<div
-  class="grid gap-0 mt-15 items-center"
-  style="grid-template-columns: 1fr 1fr;"
->
-
-<div>
-
-<Venn
-  top="Negócio"
-  left="Estatística"
-  right="Computação"
-  center="Ciência de\nDados"
-  size="430px"
-  :transpLight="0.20"
-  :transpDark="0.15"
-/>
-
-</div>
-
-<div v-click>
-
-<Venn
-  top="Contratos"
-  left="Análise e projeção \n de dados"
-  right="Algoritmos e IA"
-  center="\n🫵"
-  centerSize="70"
-  size="430px"
-  :transpLight="0.20"
-  :transpDark="0.15"
-/>
-
-</div>
-
-</div>
-
----
-
-# Somos todos cientistas
-
-<DataVSContract />
-
----
-
-
-# Gestão de Contratos
-
-- Documento → risco silencioso
-- 80 páginas → ninguém lê tudo
-- O problema já está lá. Esperando.
-
-<Spacer :h="28"/>
-
-<BeforeAfter language="pt">>
-<template #before>
-
-Você vai ao contrato quando o problema <HighLight  color="#EC635E"> já aconteceu</HighLight>.
-
-</template>
-<template #after>
-
-Com IA: o contrato <HighLight color="#e2f81b"> te avisa antes</HighLight>.
-
-</template>
-</BeforeAfter>
-
-::note::
-Contratos: não são apenas documentos. São riscos silenciosos espalhados em 80 páginas que você não tem tempo de ler.
-
-Gestão contratual tradicional considera cada contrato um documento, e até um potencial fator de risco. A gente fala em "contrato" no corredor e as pessoas associam com problemas.
-
-A IA transforma contratos em sinais operacionais, informações vivas capazes de te avisarem antes que o problema aconteça.
-
----
-
-# Luz sobre riscos silenciosos
-
-<AISpotlight />
-
----
 
 # O que a IA sabe
 
@@ -325,647 +241,384 @@ Dois problemas opostos — ao mesmo tempo. Recall: ela não cobre tudo e não av
 
 ---
 
-# Limite 1: Recall
+<div class="rf-center" style="height: 100%; position: relative;">
 
-<div class="grid grid-cols-2 gap-8 mt-12">
+<div class="rf-eyebrow">do chat ao agente</div>
 
-<div class="glass p-6">
+<h1 class="rf-hero rf-title" style="margin: 0.4rem 0 0.8rem;">Claude Code</h1>
 
-### O que estava no contrato
+<p style="font-family: 'TeX Gyre Pagella', Georgia, serif; font-style: italic; font-size: 1.35rem; color: var(--rf-text-secondary); margin: 0;">Do chat ao agente: como um LLM ganha mãos</p>
 
-<div class="mt-4" style="line-height: 2.2">
+<p class="rf-muted" style="margin-top: 2.2rem; font-size: 0.9rem;">Ramon Ferrari · 2026</p>
 
-✓ Renovação automática  
-✓ Prazo de aviso: 90 dias  
-✓ Multa — Anexo D  
-✓ Foro de eleição  
-✓ Cláusula de exclusividade  
-
+<div style="position: absolute; right: 0; bottom: 0; width: 330px;">
+<Terminal
+  :conversation="[{ user: 'quem é você?', response: 'Seu novo colega de trabalho.' }]"
+  modelName="Claude Sonnet 4.5"
+  fontSize="0.75rem"
+  :loop="true"
+/>
 </div>
 
 </div>
 
-<div class="glass p-6">
-
-### O que a IA devolveu
-
-<div class="mt-4" style="line-height: 2.2">
-
-<span style="color: var(--rf-primary)">✓ Renovação automática</span>  
-<span style="color: var(--rf-primary)">✓ Prazo de aviso: 90 dias</span>  
-<span style="color: #EC635E">✗ Multa — Anexo D</span>  
-<span style="color: #EC635E">✗ Foro de eleição</span>  
-<span style="color: #EC635E">✗ Cláusula de exclusividade</span>  
-
-</div>
-
-<div class="mt-6 opacity-70 text-sm">
-
-Sem avisar que perdeu.
-
-</div>
-
-</div>
-
-</div>
-
-::note::
-O estagiário pelo menos diria 'esse aqui eu não entendi bem.' A IA devolve a lista com a mesma confiança — tenha encontrado tudo ou não.
+<!-- Fala sugerida — Hoje eu quero mostrar uma mudança de paradigma no uso de IA para desenvolvimento. Não é mais sobre perguntar pro modelo e copiar a resposta. É sobre deixar o modelo agir dentro do seu ambiente real. -->
 
 ---
 
-# Limite 2: Alucinação
+# O que é uma LLM "normal"?
 
-<div class="mt-10">
+<div class="grid gap-8 mt-4 items-center" style="grid-template-columns: 1fr 1fr;">
 
-A IA tem pavor de dizer **"não sei"**.
+<div class="rf-panel">
 
-Quando não encontra — **ela inventa**.
+**Modelo de chat tradicional**
 
-Com a mesma voz de quem encontrou.
+- Você escreve uma mensagem
+- O modelo responde com texto
+- Você copia, aplica, testa manualmente
+- Sem acesso ao seu ambiente
 
 </div>
 
-::note::
-O segundo limite se chama alucinação. É quando a IA não encontra a informação — mas em vez de dizer 'não sei', ela cria uma resposta que parece plausível. Testei isso: peguei um contrato que não tinha multa rescisória definida. Perguntei: 'qual é o valor da multa?' Ela respondeu: 8%. Com total confiança. De onde veio esse 8%? Ela também não sabe.
+<div>
+<Terminal
+  :conversation="[{ user: 'Como leio um arquivo JSON em Python?', response: 'Use o módulo json com json.load sobre o arquivo aberto. Agora copie, cole no seu editor e rode você mesmo — eu não tenho acesso ao seu projeto.' }]"
+  modelName="ChatGPT"
+/>
+</div>
+
+</div>
+
+<!-- Fala sugerida — O claude.ai, o ChatGPT são interfaces de conversa. O modelo vive numa caixa: recebe texto, devolve texto. Ele não sabe nada do seu projeto, não toca nos seus arquivos, não roda nenhum comando. Você é o intermediário entre ele e o mundo real. -->
 
 ---
 
-# O GPS no Lago
+# O ciclo manual
 
-<div class="grid gap-8 mt-6" style="grid-template-columns: 1fr 1fr;">
+<LoopChatManual />
+
+<!-- Fala sugerida — Quem já usou IA pra programar conhece esse loop. Você fica no meio, sendo o carteiro entre o modelo e o seu ambiente. É produtivo? Sim. Mas é ainda o humano executando cada passo. O Claude Code quebra esse padrão. -->
+
+---
+
+<div class="rf-center" style="height: 100%; text-align: center; align-items: center;">
+
+<div class="rf-eyebrow" style="margin-bottom: 1.2rem;">Seção 2</div>
+
+<div class="rf-section-title">O que é o <span class="rf-title">Claude Code</span></div>
+
+</div>
+
+---
+
+# Claude Code, direto ao ponto
+
+<div class="grid gap-8 mt-4 items-center" style="grid-template-columns: 2fr 3fr;">
+
+<div class="rf-center">
+
+**Um agente de codificação que vive no seu terminal.**
+
+- Lê seu codebase
+- Edita arquivos
+- Roda comandos
+- Itera com base nos resultados
+
+<p class="rf-muted" style="font-size: 0.85rem; margin-top: 1rem;">Disponível via CLI, VS Code, JetBrains e GitHub Actions.</p>
+
+</div>
+
+<div>
+<Terminal
+  :conversation="[{ user: 'O que você faz que um chatbot não faz?', response: 'Eu leio seu codebase, edito arquivos, rodo comandos no terminal e itero com base nos resultados — tudo dentro do seu ambiente, sem você servir de intermediário.' }]"
+  modelName="Claude Sonnet 4.5"
+/>
+</div>
+
+</div>
+
+<!-- Fala sugerida — Claude Code não é um chat. É uma ferramenta de linha de comando que roda no seu ambiente local. Você digita claude no terminal e passa a trabalhar com um agente que enxerga seus arquivos, executa comandos reais e raciocina com base no que acontece. -->
+
+---
+
+# A diferença fundamental
+
+<TabelaComparativa />
+
+<!-- Fala sugerida — A diferença não é de qualidade do modelo, é de arquitetura. O chat te devolve texto. O Claude Code age. Ele tem mãos: pode ler o repositório, modificar arquivos, rodar testes e usar o resultado pra decidir o próximo passo. -->
+
+---
+
+<div class="rf-center" style="height: 100%; text-align: center; align-items: center;">
+
+<div class="rf-eyebrow" style="margin-bottom: 1.2rem;">Seção 3</div>
+
+<div class="rf-section-title">Conceitos <span class="rf-title">fundamentais</span></div>
+
+</div>
+
+---
+
+# Contexto: a memória de trabalho
+
+<div class="grid gap-8 mt-4 items-center" style="grid-template-columns: 1fr 1fr;">
+
+<div class="rf-panel">
+
+**O modelo só vê o que está na janela de contexto:**
+
+- Mensagens da sessão atual
+- Arquivos explicitamente carregados
+- Saída dos comandos rodados
+- Instruções de sistema (CLAUDE.md, skills)
+
+</div>
+
+<div>
+<Terminal
+  :conversation="[{ user: 'Continua de onde paramos ontem?', response: 'Não tenho memória da sessão anterior. Cada sessão começa com a janela de contexto limpa — só persiste o que estiver no CLAUDE.md ou o que você recarregar.' }]"
+  modelName="Claude Sonnet 4.5"
+/>
+</div>
+
+</div>
+
+<p style="text-align: center; font-family: 'TeX Gyre Pagella', Georgia, serif; font-style: italic; font-size: 1.05rem; color: var(--rf-text-muted); margin-top: 1.2rem;">Contexto não é memória permanente — é RAM, não HD.</p>
+
+<!-- Fala sugerida — Antes de falar em agentes, é fundamental entender contexto. O modelo não tem memória persistente por padrão. Ele só sabe o que está na janela de contexto da sessão atual. Quando a sessão fecha, ela some, a menos que você configure algo pra persistir. -->
+
+---
+
+# CLAUDE.md
+
+<div class="grid gap-8 mt-4 items-center" style="grid-template-columns: 1fr 1fr;">
 
 <div>
 
-### IA sem validação
+**O briefing permanente do agente**
 
-A IA não avisa quando erra. Em contratos, um número inventado numa cláusula pode custar muito caro.
+```markdown
+# Contexto do projeto
+API REST em FastAPI. Python 3.11. Testes com pytest.
 
-<div class="glass p-4 mt-8" style="border-color: #EC635E;">
-
-**Confiante. Errado. Sem avisar.**
-
-</div>
-
-</div>
-
-<LLMChat prompt="Qual é a multa rescisória deste contrato?" model="GPT-4" provider="OpenAI" version="2024-01">
-
-A multa rescisória é de **8% do valor total**, conforme estabelecido na Cláusula 12.3.
-
-</LLMChat>
-
-</div>
-
-::note::
-O contrato não tinha multa definida. A Cláusula 12.3 não existe. A IA criou as duas coisas com total confiança.
-
----
-
-# A IA Quer te Agradar
-
-<div class="mt-10">
-
-A IA foi **literalmente treinada pra te agradar**.
-
-Aprende com feedback humano — quando a gente gosta da resposta, ela reforça aquilo.
-
-O problema: **"te agradar" e "ser preciso"** são objetivos opostos.
-
-</div>
-
-::note::
-Sabe por que a IA alucina com tanta frequência? Porque ela foi treinada pra te agradar. Quando você pergunta 'qual é a multa rescisória?' — a resposta que te agrada é um número. A resposta honesta, se o contrato não define, é: 'não existe.' Mas adivinhem qual ela prefere te dar.
-
----
-
-# Limite 3: Variabilidade de Documentos
-
-<div class="grid grid-cols-3 gap-4 mt-8" style="font-size: 0.85rem;">
-
-<div class="glass p-4">
-
-### Contrato A — 2015
-
-```
-Multa rescisória:
-5% do valor total
+# Convenções
+- snake_case em variáveis
+- Docstrings em funções públicas
+- Nunca commitar sem rodar os testes
 ```
 
-✓ Simples. IA acha fácil.
+<p class="rf-muted" style="font-size: 0.85rem;">Carregado automaticamente em cada sessão dentro do projeto.</p>
 
 </div>
 
-<div class="glass p-4">
-
-### Contrato B — 2019
-
-```
-Penalidade conforme
-tabela do Anexo D
-```
-
-⚠️ Anexo D não está
-no PDF.
-
-</div>
-
-<div class="glass p-4">
-
-### Contrato C — 2023
-
-```
-Indenização pelos
-custos operacionais
-até a data...
-```
-
-✗ Quanto é isso?
-Depende de variáveis
-externas.
-
+<div>
+<Terminal
+  :conversation="[{ user: 'Cria uma função de parsing de datas.', response: 'Feito: nomeei em snake_case e adicionei docstring na função pública, seguindo as convenções do seu CLAUDE.md. Quer que eu rode os testes antes de seguir?' }]"
+  modelName="Claude Sonnet 4.5"
+/>
 </div>
 
 </div>
 
-::note::
-Terceiro limite — esse não é culpa da IA. É culpa dos próprios contratos. Três formas diferentes de dizer — ou não dizer — a mesma coisa. Multiplicado por 80 contratos, isso vira um problema operacional.
+<!-- Fala sugerida — O CLAUDE.md é o arquivo que diz pro agente quem ele é dentro do seu projeto. Stack, convenções, regras de negócio, o que nunca fazer. É o onboarding permanente. Você escreve uma vez, e toda sessão começa com esse contexto já carregado. -->
 
 ---
 
-# O Chaveiro ✂️
+# Skills
 
-<div class="grid grid-cols-3 gap-5 mt-8" style="font-size: 0.85rem;">
-
-<div class="glass p-5" style="border-color: var(--rf-primary);">
-
-🔑 **Prompt genérico**
-
-→ Contrato 2015  
-**Funciona.**  
-"Multa: 5% do valor total"
-
-</div>
-
-<div class="glass p-5" style="border-color: #e2f81b; opacity: 0.75;">
-
-🗝️ **Mesmo prompt**
-
-→ Contrato 2019  
-**Falha.**  
-"Penalidade conforme Anexo D"
-
-</div>
-
-<div class="glass p-5" style="border-color: #EC635E; opacity: 0.6;">
-
-🔐 **Mesmo prompt**
-
-→ Contrato 2023  
-**Inventa.**  
-"8% do valor total" ← alucinação
-
-</div>
-
-</div>
-
-<div class="glass mt-6 p-4 text-center" style="font-size: 0.95rem;">
-
-A solução não é ter mais força — é ter a chave certa para cada fechadura.
-
-</div>
-
----
-
-
-# Classificação
-
-<Classification />
-
----
-
-# Projeção
-
-<Regression />
-
----
-
-# Agrupamentos
-
-<Clustering />
-
----
-
-# Redes
-
-<GraphNetwork />
-
----
-
-# Acompanhamento temporal
-
-<TimeSeries />
-
----
-
-# O Elo que Faltava
-
-<div class="glass mt-16 p-10 text-center">
-
-### Todas essas técnicas precisam da mesma coisa:
-
-**dados estruturados.**
-
-Não PDFs. Dados.
-
-</div>
-
-<v-click>
-
-<div class="glass mt-6 p-6 text-center">
-
-O elo que faltava é transformar **PDF em dado**.
-
-</div>
-
-</v-click>
-
----
-
-# Extração de Dados
-
-<ContractExtraction />
-
----
-
-# Caso 01
-## Extração na Prática
-
-<div class="grid gap-12 mt-5"
-style="grid-template-columns: 4fr 6fr;"
->
+<div class="grid gap-8 mt-4 items-center" style="grid-template-columns: 1fr 1fr;">
 
 <div>
 
-<div style="font-size: 0.9rem">
-<PromptCard title="Extração Dados">
-Você é um assessor jurídico especista em digitalização de informações do contrato recebido Extraia:
+**Instruções especializadas empacotadas**
 
-  - Categoria, entre: engenharia, jurídico, saúde ou secretaria.
-  - Número de posições
-  - Valor mensal
-  - Fornecedor
-</PromptCard>
-</div>
-</div>
+Cada skill é uma pasta com um `SKILL.md`: quando usar, o que faz, como executar.
 
-<v-click>
-
-<div style="font-size: 0.9rem">
-<div>
-  <table class="rf-table">
-    <thead>
-      <tr>
-        <th>Categoria</th>
-        <th>Posições</th>
-        <th>Valor mensal</th>
-        <th>Fornecedor</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Engenharia</td>
-        <td>82</td>
-        <td>R$ 1.600.000</td>
-        <td>BB Consulting</td>
-      </tr>
-      <tr>
-        <td>Jurídico</td>
-        <td>12</td>
-        <td>R$ 480.000</td>
-        <td>Lex Group</td>
-      </tr>
-      <tr>
-        <td>Secretariado</td>
-        <td>24</td>
-        <td>R$ 210.000</td>
-        <td>Prime Office</td>
-      </tr>
-      <tr>
-        <td>Saúde</td>
-        <td>18</td>
-        <td>R$ 234.000</td>
-        <td>MedCayre</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div>
-</v-click>
-
-
-</div>
-
----
-
-# Então o Que Fazer?
-
-<div class="text-center mt-16">
-
-Voltamos pro **papel** e pro **advogado**?
-
-</div>
-
-<v-click>
-
-<div class="text-center mt-8">
-
-**Não.** Mas a IA crua também não é suficiente.
-
-O que funciona é **colocar estrutura em volta da IA**.
-
-</div>
-
-</v-click>
-
-::note::
-O que você faz? Volta pro papel e pro advogado lendo contrato por contrato? Não. Mas a IA crua também não é suficiente — pelo menos não pra quem precisa de confiabilidade, rastreabilidade e escala.
-
----
-
-# 🔦 FAROL DE CONTRATOS
-
-<div class="glass mt-12">
-
-**Inteligência aplicada à gestão de contratos.**
-
-Você carrega seus PDFs — do jeito que estão — e o sistema lê, extrai as informações críticas, organiza num painel e avisa quando algo precisa de atenção.
-
-Não substitui o advogado. Substitui o trabalho de ler 50 páginas pra descobrir uma data.
-
-</div>
-
-::note::
-O Farol de Contratos é uma solução que resolve exatamente o que mostrei. Primeira aparição do nome e conceito.
-
----
-
-# Como Funciona
-
-<ArchitectureFlow>
-
-```mermaid
-graph LR
-  A["📄 Seus PDFs"]
-  B["🔍 Leitura Inteligente<br/>Layout, tabelas,<br/>anexos, assinaturas"]
-  C["🤖 Extração Estruturada<br/>Cláusulas em campos<br/>fixos e validados"]
-  D["📊 Painel + Alertas<br/>Dados prontos pra decisão"]
-  
-  A --> B --> C --> D
+```
+.claude/skills/
+├── docx/SKILL.md
+├── pdf/SKILL.md
+└── data-analysis/SKILL.md
 ```
 
-</ArchitectureFlow>
+<p class="rf-muted" style="font-size: 0.85rem;">O agente lê a skill relevante quando necessário — não tudo de uma vez.</p>
 
-::note::
-Primeiro: o sistema lê o PDF de verdade. Segundo: extrai informações em campos fixos, não inventa. Terceiro: tudo aparece num painel com alertas e scores de risco.
-
----
-
-# A Lista de Mercado
-
-<Spacer :h="20"/>
-
-<BeforeAfter language="pt">
-<template #before>
-
-**IA crua:** "Analise este contrato."
-
-→ Volta com o que achou  
-→ Formato diferente toda vez  
-→ Você não sabe o que faltou  
-
-</template>
-<template #after>
-
-**Com estrutura:** "Extraia: multa, vencimento, renovação. Se não encontrar: N/E."
-
-→ Você sabe o que pediu  
-→ Mesmo formato, sempre  
-→ Você sabe o que faltou  
-
-</template>
-</BeforeAfter>
-
----
-
-# O Detetive
-
-<div class="grid gap-8 mt-6" style="grid-template-columns: 1fr 1fr;">
+</div>
 
 <div>
-
-### Você não precisa confiar — você pode verificar
-
-IA crua diz "5%". Você torce pra estar certo.
-
-O Farol diz "5%" — e te mostra de onde veio.
-
-<div class="glass p-4 mt-6" style="font-size: 0.9rem; border-color: var(--rf-primary);">
-
-Você pode abrir o PDF e conferir.  
-Sempre.
-
+<Terminal
+  :conversation="[{ user: 'Gera um relatório em Word com esses números.', response: 'Detectei a tarefa e carreguei a skill docx. Gerando o relatório com python-docx e salvando como relatorio.docx no diretório do projeto.' }]"
+  modelName="Claude Sonnet 4.5"
+/>
 </div>
 
 </div>
 
-<TerminalBlock>
-
-> Extração: contrato_fornecedor_A.pdf
-
-Multa rescisória: 5%
-  → Cláusula 8.2, página 12
-
-Renovação automática: Sim
-  → Cláusula 14.1, página 18
-
-Foro de eleição: N/E
-  → Campo não encontrado
-
-</TerminalBlock>
-
-</div>
-
-::note::
-O que mais me incomoda na IA crua é que você não sabe de onde veio a resposta. O Farol funciona diferente: quando extrai, ele cita a fonte. Você pode abrir o PDF e conferir.
+<!-- Fala sugerida — Skills são módulos de expertise. Em vez de repetir em cada sessão como criar um Word, você empacota isso numa skill. O agente detecta quando a tarefa é relevante e carrega as instruções na hora. Isso evita poluir o contexto com informação desnecessária. -->
 
 ---
 
-# DEMONSTRAÇÃO
+# O loop agêntico
 
-<div class="text-center mt-20">
+<div class="grid gap-8 mt-4 items-center" style="grid-template-columns: 2fr 3fr;">
 
-Carregando contratos reais...
+<div class="rf-panel">
+
+**O ciclo de raciocínio**
+
+1. Recebe a tarefa
+2. Planeja as ações
+3. Usa uma ferramenta
+4. Observa o resultado
+5. Raciocina: e agora?
+6. Próxima ação — ou conclui
 
 </div>
 
-::note::
-Neste momento você compartilha a tela do sistema. 
-- Passso 1: Carregamento de 5 contratos reais
-- Passo 2: Processamento (30-60s) — o sistema está lendo layout, identificando cláusulas, estruturando em campos
-- Passo 3: Painel aparece — cinco contratos, dois em Risco Alto, um em Crítico
-- Passo 4: Clica no contrato crítico — renovação automática detectada, prazo 90 dias, data limite calculada
-- Passo 5: Mostra a fonte — Cláusula 8.2, página 12, rastreável
-- Passo 6: Campo com baixa confiança em amarelo — sistema marcou incerteza em vez de inventar
+<div>
+<LoopAgentico />
+</div>
+
+</div>
+
+<p style="text-align: center; font-family: 'TeX Gyre Pagella', Georgia, serif; font-style: italic; font-size: 1.05rem; color: var(--rf-text-muted); margin-top: 1rem;">O modelo não adivinha — ele age, observa, ajusta.</p>
+
+<!-- Fala sugerida — Diferente do chat, onde o modelo responde uma vez e para, o agente opera em ciclos. Ele planeja, age, vê o que aconteceu e decide o próximo passo. Se um teste falha, ele lê o erro, entende a causa, propõe a correção e roda de novo. Esse loop é o coração do Claude Code. -->
 
 ---
 
-# O Que o Farol Extrai (Padrão)
+<div class="rf-center" style="height: 100%; text-align: center; align-items: center;">
 
-<div class="mt-10">
+<div class="rf-eyebrow" style="margin-bottom: 1.2rem;">Seção 4</div>
 
-<div class="glass p-6">
-
-```
-✓  Número do contrato
-✓  Quem contrata / quem é contratado
-✓  Valor total
-✓  Data de assinatura
-✓  Data de vencimento
-✓  Score de risco (Baixo / Médio / Alto / Crítico)
-✓  Tem renovação automática? (Sim / Não)
-```
-
-</div>
-
-</div>
-
-<div class="mt-6 text-sm opacity-75">
-
-**Mas cada negócio tem o que importa pra ele.**
-
-</div>
-
-::note::
-Esses são os campos que o Farol extrai por padrão. É um bom começo pra qualquer empresa. Mas é só o começo.
-
----
-
-# O Cardápio
-
-<div class="grid grid-cols-3 gap-4 mt-8" style="font-size: 0.85rem;">
-
-<div class="glass p-5">
-
-**🚛 Logística**
-
-SLA de entrega garantido  
-Multa por atraso  
-Responsabilidade por avaria  
-
-</div>
-
-<div class="glass p-5">
-
-**🏛️ Setor público**
-
-Número da licitação  
-Dotação orçamentária  
-Vigência fiscal  
-
-</div>
-
-<div class="glass p-5">
-
-**🔄 Serviços recorrentes**
-
-Cláusula de exclusividade  
-Reajuste (IPCA / IGP-M)  
-Prazo de rescisão sem multa  
-
-</div>
-
-</div>
-
-<div class="glass mt-6 p-4 text-center">
-
-**Qualquer campo que faz sentido — o Farol extrai.**
+<div class="rf-section-title">Nível <span class="rf-title">intermediário</span></div>
 
 </div>
 
 ---
 
-# O Que Está Faltando?
+# Ferramentas nativas do agente
 
-<div class="glass mt-16 text-center p-12">
+<GridFerramentas />
 
-### O que vocês sentiriam falta no dia a dia?
-
-**Olhando pra lista de campos padrão — qual informação vocês queria ter tido?**
-
-</div>
-
-::note::
-Esse é o slide mais importante da segunda metade. Deixa alguém responder. Anota o que as pessoas falam — vai virar argumento personalizado na conversa depois.
+<!-- Fala sugerida — O agente não faz nada silenciosamente, pelo menos não por padrão. Cada vez que ele quer rodar um comando ou modificar um arquivo, ele mostra o que vai fazer e espera sua aprovação. Você pode configurar permissões mais abertas pra tarefas de baixo risco, ou mais restritivas pra operações críticas. -->
 
 ---
 
-# O Que o Farol NÃO Faz
+# Subagentes
 
-<div class="grid grid-cols-2 gap-8 mt-10">
+<div class="grid gap-8 mt-4 items-center" style="grid-template-columns: 1fr 1fr;">
 
-<div class="glass p-6">
+<div class="rf-panel">
 
-### O Farol FAZ
+**Sessões independentes e especializadas**
 
-✓ Extrai dados estruturados  
-✓ Identifica padrões  
-✓ Alerta sobre anomalias  
-✓ Escala para centenas  
-✓ Rastreia a fonte  
-✓ Marca incertezas  
+- Cada subagente tem seu **próprio contexto**
+- Útil para tarefas paralelas ou longas
+- Protege o contexto do agente principal
+- Recomendado: subagentes somente leitura
 
 </div>
 
-<div class="glass p-6">
-
-### O Farol NÃO FAZ
-
-✗ Julga se o contrato é bom ou ruim  
-✗ Interpreta lei  
-✗ Resolve anexos faltantes  
-✗ Substitui advogado em casos complexos  
-
+<div>
+<Terminal
+  :conversation="[{ user: 'Analisa a segurança do repositório.', response: 'Vou delegar a um subagente somente leitura, com contexto próprio. Ele varre o código e me devolve apenas o resumo — assim não incho a janela do agente principal.' }]"
+  modelName="Claude Sonnet 4.5"
+/>
 </div>
 
 </div>
 
-::note::
-A divisão de trabalho é clara: Farol faz o trabalho sujo de leitura. Você e seu time fazem o trabalho que exige julgamento.
+<p style="text-align: center; font-family: 'TeX Gyre Pagella', Georgia, serif; font-style: italic; font-size: 1.05rem; color: var(--rf-text-muted); margin-top: 1.2rem;">O agente principal orquestra. Subagentes executam tarefas isoladas.</p>
+
+<!-- Fala sugerida — Quando uma tarefa é grande ou complexa, o agente principal pode delegar partes pra subagentes. Cada um opera de forma independente, com seu próprio contexto. Isso é útil pra não sobrecarregar a janela principal com resultados extensos, como o output de uma análise grande ou um scan de segurança. -->
 
 ---
 
-# Moral
+# MCP
 
-<div class="glass mt-16 p-10 text-center">
+<div class="grid gap-8 mt-4 items-center" style="grid-template-columns: 1fr 1fr;">
 
-### Informação escondida num PDF não serve pra ninguém.
+<div class="rf-panel">
 
-**O Farol ilumina o que está lá —**
+**Model Context Protocol**
 
-**pra você decidir com dados, não com sorte.**
+Serviços externos viram ferramentas do agente:
+
+- GitHub (issues, PRs)
+- Jira, Linear (tasks)
+- Slack (notificações)
+- Banco de dados
+- APIs internas da empresa
+
+</div>
+
+<div>
+<Terminal
+  :conversation="[{ user: 'Abre uma issue sobre o bug de autenticação.', response: 'Issue criada via MCP do GitHub: numero 142, Falha intermitente no login OAuth. Já marquei com a label bug e atribuí ao time de backend.' }]"
+  modelName="Claude Sonnet 4.5"
+/>
+</div>
+
+</div>
+
+<p style="text-align: center; font-family: 'TeX Gyre Pagella', Georgia, serif; font-style: italic; font-size: 1.05rem; color: var(--rf-text-muted); margin-top: 1.2rem;">MCP = o agente ganha integrações além do filesystem local.</p>
+
+<!-- Fala sugerida — MCP é o protocolo que expande o alcance do agente pra além do repositório local. Com ele, você conecta o Claude Code a ferramentas externas: criar uma issue no GitHub, atualizar uma tarefa no Jira, consultar um banco de dados. O agente vira um orquestrador de verdade dentro do seu workflow. -->
+
+---
+
+<div class="rf-center" style="height: 100%; text-align: center; align-items: center;">
+
+<div class="rf-eyebrow" style="margin-bottom: 1.2rem;">Seção 5</div>
+
+<div class="rf-section-title"><span class="rf-title">Fechamento</span></div>
 
 </div>
 
 ---
 
-# Perguntas?
+# O mapa mental
 
-<div class="text-center mt-20">
+<div class="grid gap-8 mt-2 items-center" style="grid-template-columns: 3fr 2fr;">
 
-🔦 **FAROL DE CONTRATOS**
+<div>
+<MapaMental />
+</div>
 
-ramon.ferrari@gmail.com
+<div class="rf-panel" style="font-size: 0.82rem;">
+
+- **LLM via chat** → responde texto
+- **Claude Code** → age no ambiente
+- **Contexto** → memória de trabalho
+- **CLAUDE.md** → briefing permanente
+- **Skills** → expertise sob demanda
+- **Loop agêntico** → agir e iterar
+- **Subagentes** → paralelismo isolado
+- **MCP** → mundo externo
 
 </div>
+
+</div>
+
+<!-- Fala sugerida — Resumindo: Claude Code não é uma evolução do chatbot, é uma categoria diferente. Você não conversa pra depois executar: você delega, e ele executa. Entender contexto, skills e o loop agêntico separa quem usa o Claude Code como autocomplete de quem usa como um colaborador real de desenvolvimento. -->
+
+---
+
+<div class="rf-center" style="height: 100%; align-items: center; text-align: center;">
+
+<div style="width: 560px; max-width: 90%;">
+<Terminal
+  :conversation="[{ user: 'E aí, o que vamos construir?', response: 'Você decide — eu já estou no terminal, pronto pra agir.' }]"
+  modelName="Claude Sonnet 4.5"
+  :loop="true"
+/>
+</div>
+
+<p class="rf-muted" style="margin-top: 1.6rem; font-size: 0.85rem;">Ramon Ferrari · ramon.ferrari@gmail.com · linkedin.com/in/ramonferrari</p>
+
+</div>
+
+<!-- Fala sugerida — Obrigado. Fico à disposição pra perguntas, e se quiser ver um demo ao vivo, posso mostrar o agente rodando agora. -->
 
