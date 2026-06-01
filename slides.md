@@ -237,18 +237,11 @@ class: "text-center"
 
 # Instalação e Configuração Inicial
 
-<div class="grid grid-cols-2 gap-8 items-center">
 <div>
-<p>
-Execute sempre <strong>dentro do diretório raiz do projeto</strong>. O agente performa muito melhor sobre uma árvore de código funcional e testável.
-</p>
-<p class="!mt-4">
-O comando <code>/init</code> gera um <code>CLAUDE.md</code> inicial analisando a estrutura do seu projeto.
-</p>
-</div>
-<TerminalBlock
-lang="bash"
-:content='`
+<p>Execute sempre <strong>dentro do diretório raiz do projeto</strong>. O agente performa muito melhor sobre uma árvore de código funcional e testável.</p>
+<p class="!mt-4">O comando <code>/init</code> gera um <code>CLAUDE.md</code> inicial analisando a estrutura do seu projeto.</p>
+
+```bash
 # Instalação global via npm
 npm install -g @anthropic-ai/claude-code
 
@@ -258,8 +251,7 @@ claude auth login
 # Iniciar no diretório do projeto
 cd meu-projeto
 claude
-`'
-/>
+```
 </div>
 
 ::note::
@@ -303,11 +295,10 @@ Vamos à prática. A instalação é simples via npm. O ponto crítico é: sempr
 
 # Hierarquia do `CLAUDE.md`
 
-<div class="grid grid-cols-2 gap-8 items-center">
-<div>
-<p>O agente carrega <strong>múltiplos</strong> arquivos <code>CLAUDE.md</code> em uma hierarquia, permitindo regras globais, de time e pessoais.</p>
+<div class="flex flex-col items-center">
+<p class="mb-4" style="max-width: 700px;">O agente carrega <strong>múltiplos</strong> arquivos <code>CLAUDE.md</code> em uma hierarquia, permitindo regras globais, de time e pessoais.</p>
 
-<table class="rf-table mt-4">
+<table class="rf-table" style="margin: 0.5rem auto;">
   <thead>
     <tr>
       <th>Localização</th>
@@ -319,7 +310,7 @@ Vamos à prática. A instalação é simples via npm. O ponto crítico é: sempr
     <tr>
       <td><code>~/.claude/CLAUDE.md</code></td>
       <td>Global (pessoal)</td>
-      <td>Não</td>
+      <td class="text-center">❌ Não</td>
     </tr>
     <tr>
       <td><code>./CLAUDE.md</code></td>
@@ -340,8 +331,12 @@ Vamos à prática. A instalação é simples via npm. O ponto crítico é: sempr
 </table>
 </div>
 
-<div class="prose text-sm">
-<pre class="!bg-transparent !p-0">
+---
+
+# Estrutura em Monorepos
+
+<div class="flex flex-col items-center mt-4">
+<pre style="font-size: 1.1rem; line-height: 1.8; background: transparent; padding: 0; font-family: monospace;">
 ~/.claude/CLAUDE.md (global)
     └── projeto/
         ├── CLAUDE.md (time)
@@ -351,17 +346,16 @@ Vamos à prática. A instalação é simples via npm. O ponto crítico é: sempr
         └── api/
             └── CLAUDE.md (backend)
 </pre>
-<p class="rf-muted">Ótimo para monorepos com regras diferentes para frontend e backend.</p>
-</div>
+<p class="rf-muted mt-6">Ótimo para monorepos com regras diferentes para frontend e backend.</p>
 </div>
 
 
 
 ---
 
-#Modos de Permissão
+# Modos de Permissão
 
-<p>Controle o nível de autonomia do agente com 4 modos de permissão. Use <code>/permissions</code> para mudar de modo durante a sessão.</p>
+<p style="opacity: 1; margin-bottom: 1.5rem;">Controle o nível de autonomia do agente com 4 modos de permissão. Use <code>/permissions</code> para mudar de modo durante a sessão.</p>
 
 <div class="grid grid-cols-4 gap-3 mt-4 text-sm">
   <div class="glass p-4">
@@ -404,32 +398,30 @@ class: "text-center"
 <div class="prose text-left text-sm">
 <ol>
   <li class="!pl-0">
-    <strong class="text-green-300">1. Explorar (Plan mode)</strong>
-    <p class="!text-xs !opacity-80 !-mt-1"><code>leia /src/auth e entenda como gerenciamos sessões.</code></p>
+    <strong class="text-green-300">Explorar (Plan mode)</strong>
+    <p class="!text-xs !opacity-100 !-mt-1"><code>leia /src/auth e entenda como gerenciamos sessões.</code></p>
   </li>
   <li class="!pl-0">
-    <strong class="text-yellow-300">2. Planejar (Plan mode)</strong>
-    <p class="!text-xs !opacity-80 !-mt-1"><code>Quero adicionar OAuth com Google. Quais arquivos precisam mudar? Crie um plano detalhado.</code></p>
+    <strong class="text-yellow-300">Planejar (Plan mode)</strong>
+    <p class="!text-xs !opacity-100 !-mt-1"><code>Quero adicionar OAuth com Google. Quais arquivos precisam mudar? Crie um plano detalhado.</code></p>
   </li>
     <li class="!pl-0">
-    <strong class="text-blue-300">3. Implementar (Default/AcceptEdits)</strong>
-    <p class="!text-xs !opacity-80 !-mt-1"><code>Implemente o fluxo OAuth do seu plano. Escreva testes para o callback handler e corrija qualquer falha.</code></p>
+    <strong class="text-blue-300">Implementar (Default/AcceptEdits)</strong>
+    <p class="!text-xs !opacity-100 !-mt-1"><code>Implemente o fluxo OAuth do seu plano. Escreva testes para o callback handler e corrija qualquer falha.</code></p>
   </li>
     <li class="!pl-0">
-    <strong class="text-purple-300">4. Commitar</strong>
-    <p class="!text-xs !opacity-80 !-mt-1"><code>Faça o commit com uma mensagem descritiva e abra um PR.</code></p>
+    <strong class="text-purple-300">Commitar</strong>
+    <p class="!text-xs !opacity-100 !-mt-1"><code>Faça o commit com uma mensagem descritiva e abra um PR.</code></p>
   </li>
 </ol>
+<p style="margin-top: 1.5rem; opacity: 1;">Separe exploração e planejamento da implementação.</p>
 </div>
 </div>
-<div>
-<ArchitectureFlow />
-<p class="rf-muted text-sm -mt-2">Separe exploração e planejamento da implementação.</p>
-</div>
-</div>
+
 ::note::
 Este é o padrão de workflow mais importante. Deixar o agente pular direto para o código pode gerar código tecnicamente correto, mas que resolve o problema errado. Use o `Plan mode` para explorar sem risco. Para tarefas pequenas, pode pular o planejamento.
 ::
+
 ---
 
 # Prompts Específicos e Ricos em Contexto
@@ -624,14 +616,23 @@ class: "text-center"
 
 ---
 
-#Roteiro de Aprendizado Sugerido
-<Timeline
-  :items="[
-    { week: 1, title: 'Fundamentos', tasks: ['Instalar e configurar', 'Criar seu primeiro CLAUDE.md', 'Praticar os modos de permissão', 'Dominar /clear e /rewind'] },
-    { week: 2, title: 'Workflow', tasks: ['Aplicar o padrão Explorar→Planejar', 'Criar 2-3 slash commands customizados', 'Usar um subagente para revisão'] },
-    { week: 3, title: 'Escala', tasks: ['Configurar git worktrees para 2+ sessões', 'Integrar o agente em um script (modo não-interativo)', 'Explorar hooks para automação'] },
-  ]"
-/>
+# Roteiro de Aprendizado Sugerido
+
+**Semana 1: Fundamentos**
+- Instalar e configurar
+- Criar seu primeiro CLAUDE.md
+- Praticar os modos de permissão
+- Dominar /clear e /rewind
+
+**Semana 2: Workflow**
+- Aplicar o padrão Explorar → Planejar
+- Criar 2-3 slash commands customizados
+- Usar um subagente para revisão
+
+**Semana 3: Escala**
+- Configurar git worktrees para 2+ sessões
+- Integrar o agente em um script (modo não-interativo)
+- Explorar hooks para automação
 
 ---
 <div class="rf-center" style="height: 100%; align-items: center; text-align: center;">

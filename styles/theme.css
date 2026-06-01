@@ -240,7 +240,7 @@ h2 {
 
 p,
 li {
-  color: var(--rf-text-secondary);
+  color: var(--rf-text-primary);
   line-height: 1.8;
   font-size: 1.05rem;
 }
@@ -370,6 +370,7 @@ code {
   font-family:
     "JetBrains Mono",
     monospace;
+  color: var(--rf-highlight);
 }
 
 /* ════════════════════════════════════════════
