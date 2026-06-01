@@ -201,11 +201,11 @@ Requer uma conta Anthropic (planos Pro, Team ou Enterprise para uso completo).
 
 ---
 
-# A Restrição Fundamental: O Context Window
+# A Restrição Fundamental
 
-<div class="flex flex-col items-center justify-center h-full gap-4">
+<div class="flex flex-col ">
 <Contextdesk />
-<p class="text-center rf-muted" style="max-width: 600px;">Pense na janela de contexto como a memória de trabalho (RAM), não como um HD.</p>
+
 </div>
 
 ---
@@ -260,17 +260,16 @@ Vamos à prática. A instalação é simples via npm. O ponto crítico é: sempr
 
 ---
 
-# O Arquivo `CLAUDE.md`: A Base de Tudo
+# O Arquivo CLAUDE.md: A Base de Tudo
 
 <div class="grid grid-cols-2 gap-6">
 
-<div class="prose glass p-4">
+<div class="prose glass p-4" style="font-size: 0.9rem; padding: 0.75rem;">
 <h4 class="!mt-0 !text-green-400">O que incluir ✅</h4>
 <ul>
   <li>Comandos de build/teste que o agente não adivinha.</li>
-  <li>Regras de estilo de código específicas do projeto.</li>
+  <li>Estilo de código específicas do projeto.</li>
   <li>Convenções do repositório (ex: branches, commits).</li>
-  <li>Decisões arquiteturais (ex: "State management com Zustand").</li>
   <li>Apontadores para documentação ("API em /docs/api.md").</li>
 </ul>
 </div>
@@ -286,10 +285,6 @@ Vamos à prática. A instalação é simples via npm. O ponto crítico é: sempr
 </div>
 
 </div>
-
-<Callout type="info" class="!mt-6">
-<strong>Regra de ouro:</strong> mantenha-o conciso. Para cada linha, pergunte: "Remover isso faria o agente cometer erros?". Se não, corte.
-</Callout>
 
 ---
 
@@ -392,30 +387,27 @@ class: "text-center"
 
 # Explorar → Planejar → Implementar → Commitar
 
-<div class="grid grid-cols-2 gap-8 mt-4">
-<div>
-<p class="text-left">O workflow de 4 fases recomendado pela Anthropic para evitar resolver o problema errado.</p>
+<p class="text-left mt-4">O workflow de 4 fases recomendado pela Anthropic para evitar resolver o problema errado.</p>
 <div class="prose text-left text-sm">
 <ol>
   <li class="!pl-0">
     <strong class="text-green-300">Explorar (Plan mode)</strong>
-    <p class="!text-xs !opacity-100 !-mt-1"><code>leia /src/auth e entenda como gerenciamos sessões.</code></p>
+    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: white;">leia /src/auth e entenda como gerenciamos sessões.</code></p>
   </li>
   <li class="!pl-0">
     <strong class="text-yellow-300">Planejar (Plan mode)</strong>
-    <p class="!text-xs !opacity-100 !-mt-1"><code>Quero adicionar OAuth com Google. Quais arquivos precisam mudar? Crie um plano detalhado.</code></p>
+    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: white;">Quero adicionar OAuth com Google. Quais arquivos precisam mudar? Crie um plano detalhado.</code></p>
   </li>
     <li class="!pl-0">
     <strong class="text-blue-300">Implementar (Default/AcceptEdits)</strong>
-    <p class="!text-xs !opacity-100 !-mt-1"><code>Implemente o fluxo OAuth do seu plano. Escreva testes para o callback handler e corrija qualquer falha.</code></p>
+    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: white;">Implemente o fluxo OAuth do seu plano. Escreva testes para o callback handler e corrija qualquer falha.</code></p>
   </li>
     <li class="!pl-0">
     <strong class="text-purple-300">Commitar</strong>
-    <p class="!text-xs !opacity-100 !-mt-1"><code>Faça o commit com uma mensagem descritiva e abra um PR.</code></p>
+    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: white;">Faça o commit com uma mensagem descritiva e abra um PR.</code></p>
   </li>
 </ol>
 <p style="margin-top: 1.5rem; opacity: 1;">Separe exploração e planejamento da implementação.</p>
-</div>
 </div>
 
 ::note::
@@ -424,7 +416,7 @@ Este é o padrão de workflow mais importante. Deixar o agente pular direto para
 
 ---
 
-# Prompts Específicos e Ricos em Contexto
+# Prompts e Contexto
 
 <div class="grid grid-cols-2 gap-4 mt-2">
 <div class="glass p-4">
@@ -448,7 +440,7 @@ Este é o padrão de workflow mais importante. Deixar o agente pular direto para
 
 ---
 
-# Deixe o Agente Verificar o Próprio Trabalho
+# Deixe o agente se auditar
 
 <p class="!mt-0">O agente para quando o trabalho "parece pronto". Sem verificação, <strong>VOCÊ</strong> vira o loop de feedback.</p>
 
@@ -456,15 +448,15 @@ Este é o padrão de workflow mais importante. Deixar o agente pular direto para
 <div>
 <p><strong>Estratégias de verificação explícita:</strong></p>
 <ul>
-  <li><strong>Testes:</strong> "...implemente e <strong>execute os testes</strong>. corrija as falhas."</li>
-  <li><strong>Build/Lint:</strong> "...implemente e <strong>verifique que <code>npm run build</code> passa</strong> sem erros."</li>
-  <li><strong>UI Visual:</strong> "[cole screenshot] ...implemente e <strong>compare com o design original</strong>."</li>
-  <li><strong>Causa Raiz:</strong> "o build falha com [erro]. <strong>corrija a causa raiz</strong>, não apenas suprima o erro."</li>
+  <li><strong>Testes:</strong> <span style="color: #e2f81b;">"...Implemente e <strong>execute os testes</strong>. Corrija as falhas."</span></li>
+  <li><strong>Build/Lint:</strong> <span style="color: #e2f81b;">"...implemente e <strong>verifique que <code style="color: #63d3a1;">npm run build</code> passa</strong> sem erros."</span></li>
+  <li><strong>UI Visual:</strong> <span style="color: #e2f81b;">"<span style="color: #63d3a1;">[cole screenshot]</span> ...implemente e <strong>compare com o design original</strong>."</span></li>
+  <li><strong>Causa Raiz:</strong> <span style="color: #e2f81b;">"O build falha com erro <span style="color: #63d3a1;">[erro]</span>. <strong>Corrija a causa raiz</strong>, não apenas suprima o erro."</span></li>
 </ul>
-<Callout type="info" class="!mt-4">Peça <strong>evidências</strong>, não assertivas: "mostre o output dos testes" é mais confiável do que "concluído".</Callout>
+
 </div>
 <div>
-<img src="https://i.imgur.com/gC5l6gU.png" class="rounded-lg" alt="Diagrama de loop de auto-correção" />
+<img src="./public/loop.gif" class="rounded-lg" alt="Diagrama de loop de auto-correção" style="max-width: 400px;" />
 <p class="text-center text-xs rf-muted">Com verificação, o agente fecha o loop de correção automaticamente.</p>
 </div>
 </div>
@@ -476,11 +468,11 @@ class: "text-center"
 
 # Funcionalidades Avançadas
 
-
-
 ---
 
-#Gerenciamento de Contexto: Comandos Essenciais
+# Comandos Essenciais
+
+<Spacer :h="20"/>
 
 <div class="grid grid-cols-2 gap-6">
 
@@ -507,39 +499,39 @@ Uma sessão limpa com um prompt melhor quase sempre supera uma sessão longa com
 
 ---
 
-#Padrões Comuns de Falha (E Como Evitá-los)
+# Padrões Comuns de Falha (E Como Evitá-los)
 
 <div class="grid grid-cols-2 gap-4 mt-4">
 
 <div v-click class="glass p-4 border-l-4 border-red-500">
-<h4 class="!mt-0">"A Sessão Cozinha de Tudo"</h4>
-<p class="text-sm !-mt-2">Você mistura tarefas não relacionadas, poluindo o contexto com informações irrelevantes.</p>
-<p class="text-sm font-bold text-green-400 !mb-0">✅ Solução: Use <code>/clear</code> entre tarefas distintas.</p>
+<h5 class="!mt-0">"A Sessão Cozinha de Tudo"</h5>
+<p class="text-sm !-mt-0">Você mistura tarefas não relacionadas, poluindo o contexto com informações irrelevantes.</p>
+✅ Solução: <span class="text-sm font-bold text-green-400 !mb-1"> Use <code>/clear</code> entre tarefas distintas.</span>
 </div>
 
 <div v-click class="glass p-4 border-l-4 border-red-500">
-<h4 class="!mt-0">"A Espiral de Correções"</h4>
-<p class="text-sm !-mt-2">O agente erra, você corrige, ele erra de novo em um loop frustrante.</p>
-<p class="text-sm font-bold text-green-400 !mb-0">✅ Solução: Após 2 correções, use <code>/clear</code> e melhore o prompt.</p>
+<h5 class="!mt-0">"A Espiral de Correções"</h5>
+<p class="text-sm !-mt-0">O agente erra, você corrige, ele erra de novo em um loop frustrante.</p>
+✅ Solução: <span  class="text-sm font-bold text-green-400 !mb-0">Após 2x, <code>/clear</code> e melhore o prompt.</span>
 </div>
 
 <div v-click class="glass p-4 border-l-4 border-red-500">
-<h4 class="!mt-0">"O CLAUDE.md Monstro"</h4>
-<p class="text-sm !-mt-2">O arquivo é tão longo que o agente começa a ignorar regras importantes.</p>
-<p class="text-sm font-bold text-green-400 !mb-0">✅ Solução: Seja impiedoso. Se o agente já faz algo certo sem a regra, delete-a.</p>
+<h5 class="!mt-0">"O CLAUDE.md Monstro"</h5>
+<p class="text-sm !-mt-0">O arquivo é tão longo que o agente começa a ignorar regras importantes.</p>
+✅ Solução: <span class="text-sm font-bold text-green-400 !mb-0">Seja impiedoso. Se o agente já faz algo certo sem a regra, delete-a.</span>
 </div>
 
 <div v-click class="glass p-4 border-l-4 border-red-500">
-<h4 class="!mt-0">"A Exploração Infinita"</h4>
-<p class="text-sm !-mt-2">Você pede para "investigar" sem escopo, e o agente lê centenas de arquivos.</p>
-<p class="text-sm font-bold text-green-400 !mb-0">✅ Solução: Use subagentes para exploração ou dê um escopo claro.</p>
+<h5 class="!mt-0">"A Exploração Infinita"</h5>
+<p class="text-sm !-mt-0">Você pede para "investigar" sem escopo, e o agente lê centenas de arquivos.</p>
+✅ Solução: <span class="text-sm font-bold text-green-400 !mb-0">Use subagentes para exploração ou dê um escopo claro.</span>
 </div>
 </div>
 
 
 ---
 
-#Subagentes: Delegação Inteligente
+# Subagentes: Delegação Inteligente
 
 <div class="grid grid-cols-2 gap-8 items-center">
 <div>
@@ -551,7 +543,35 @@ Uma sessão limpa com um prompt melhor quase sempre supera uma sessão longa com
 </ul>
 </div>
 <div class="text-center">
-<img src="https://i.imgur.com/kYqV6mG.png" class="rounded-lg" alt="Diagrama de subagente" />
+<svg viewBox="0 0 500 250" class="mx-auto" style="max-width: 100%;">
+  <!-- Main Context Box -->
+  <rect x="20" y="50" width="180" height="150" fill="none" stroke="#e2f81b" stroke-width="2" rx="8"/>
+  <text x="110" y="78" text-anchor="middle" fill="#e2f81b" font-weight="bold" font-size="5">Main</text>
+  <text x="110" y="100" text-anchor="middle" fill="#e2f81b" font-weight="bold" font-size="5">Context</text>
+  <text x="110" y="120" text-anchor="middle" fill="#9ca3af" font-size="3">(Preservado)</text>
+  <circle cx="110" cy="150" r="2" fill="#e2f81b"/>
+  <circle cx="110" cy="160" r="2" fill="#e2f81b"/>
+  <circle cx="110" cy="170" r="2" fill="#e2f81b"/>
+  
+  <!-- Subagent Context Box -->
+  <rect x="300" y="50" width="180" height="150" fill="none" stroke="#ec4899" stroke-width="2" rx="8" stroke-dasharray="5,5"/>
+  <text x="390" y="78" text-anchor="middle" fill="#ec4899" font-weight="bold" font-size="5">Subagent</text>
+  <text x="390" y="100" text-anchor="middle" fill="#ec4899" font-weight="bold" font-size="5">Context</text>
+  <text x="390" y="120" text-anchor="middle" fill="#9ca3af" font-size="3">(Isolado)</text>
+  <rect x="330" y="132" width="120" height="45" fill="none" stroke="#ec4899" stroke-width="1" rx="4" opacity="0.5"/>
+  <text x="390" y="150" text-anchor="middle" fill="#ec4899" font-size="3">Exploração</text>
+  <text x="390" y="165" text-anchor="middle" fill="#ec4899" font-size="3">Investigação</text>
+  
+  <!-- Arrow from Main to Subagent -->
+  <path d="M 205 100 L 300 100" stroke="#9ca3af" stroke-width="2" fill="none"/>
+  <polygon points="300,100 290,95 290,105" fill="#9ca3af"/>
+  <text x="252" y="85" text-anchor="middle" fill="#9ca3af" font-size="3">spawn</text>
+  
+  <!-- Arrow from Subagent back to Main (Result) -->
+  <path d="M 300 140 L 205 140" stroke="#10b981" stroke-width="2" fill="none"/>
+  <polygon points="205,140 215,145 215,135" fill="#10b981"/>
+  <text x="252" y="154" text-anchor="middle" fill="#10b981" font-size="3">resultado</text>
+</svg>
 <p class="text-xs rf-muted">O contexto principal não é poluído pela exploração do subagente.</p>
 </div>
 </div>
@@ -559,22 +579,18 @@ Uma sessão limpa com um prompt melhor quase sempre supera uma sessão longa com
 
 ---
 
-#Sessões Paralelas com Git Worktrees
+# Sessões Paralelas com Git Worktrees
 
 <p class="!mt-0">A dica #1 do criador do Claude Code para máxima produtividade: trabalhe em múltiplas tarefas simultaneamente.</p>
 <div class="grid grid-cols-2 gap-8 items-center mt-4">
-<TerminalBlock
-lang="bash"
-:content='`
-# Criar worktrees para sessões paralelas
-git worktree add ../proj-feature-auth feature/auth
-git worktree add ../proj-bugfix-login bugfix/login
-
-# Iniciar Claude em cada worktree independentemente
-cd ../proj-feature-auth && claude
-cd ../proj-bugfix-login && claude
-`'
-/>
+<div style="background: #1a1a2e; border-radius: 8px; padding: 16px; font-family: 'JetBrains Mono'; font-size: 0.85rem; color: #e0e0e0; line-height: 1.6;">
+  <div style="color: #ffd000; margin-bottom: 8px;">bash</div>
+  <div>$ git worktree add ../proj-feature-auth feature/auth</div>
+  <div>$ git worktree add ../proj-bugfix-login bugfix/login</div>
+  <div style="margin-top: 8px;">$ cd ../proj-feature-auth && claude</div>
+  <div>$ cd ../proj-bugfix-login && claude</div>
+  <div style="margin-top: 12px; color: #63d3a1;">Duas sessões rodando em paralelo, contextos isolados!</div>
+</div>
 <div>
 <p><strong>Benefícios:</strong></p>
 <ul>
@@ -594,7 +610,7 @@ class: "text-center"
 
 ---
 
-#Os 10 Mandamentos do Claude Code
+# Os 10 Mandamentos do Claude Code
 <div class="grid grid-cols-2 gap-x-8 gap-y-2 mt-4 text-left prose-sm">
   <div v-click class="flex items-center gap-2">1. Gerencie o <strong>context window</strong> acima de tudo.</div>
   <div v-click class="flex items-center gap-2">2. <strong>Explore</strong>, depois <strong>planeje</strong>, depois implemente.</div>
@@ -613,38 +629,34 @@ class: "text-center"
 </div>
 
 
-
 ---
 
-# Roteiro de Aprendizado Sugerido
+# Obrigado
 
-**Semana 1: Fundamentos**
-- Instalar e configurar
-- Criar seu primeiro CLAUDE.md
-- Praticar os modos de permissão
-- Dominar /clear e /rewind
+<Spacer :h="20"/>
 
-**Semana 2: Workflow**
-- Aplicar o padrão Explorar → Planejar
-- Criar 2-3 slash commands customizados
-- Usar um subagente para revisão
-
-**Semana 3: Escala**
-- Configurar git worktrees para 2+ sessões
-- Integrar o agente em um script (modo não-interativo)
-- Explorar hooks para automação
-
----
-<div class="rf-center" style="height: 100%; align-items: center; text-align: center;">
+<div class="rf-center" style="display: flex; flex-direction: column; align-items: center; text-align: left;">
 
 <div style="width: 560px; max-width: 90%;">
 <Terminal
-  :conversation="[{ user: 'E aí, o que vamos construir?', response: 'Você decide — eu já estou no terminal, pronto para agir.' }]"
+  :conversation="[{ user: 'E aí, o que vamos construir?', response: 'Você decide.\nEu já estou no terminal, pronto para agir.' }]"
   modelName="Claude Sonnet 4.5"
-  :loop="true"
+  :loop="false"
 />
 </div>
 
-<p class="rf-muted" style="margin-top: 1.6rem; font-size: 0.85rem;">Ramon Ferrari · ramon.ferrari@gmail.com · linkedin.com/in/ramonferrari</p>
+<div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.2rem; width: 100%;">
+  <div style="font-size: 1.6rem; color: #e2f81b; font-weight: 700; text-align: center;">Ramon Ferrari</div>
+  <div style="width: 80px; height: 1px; background: linear-gradient(90deg, transparent, #e2f81b, transparent);"></div>
+  <div style="display: flex; gap: 1.2rem; justify-content: center;">
+    <a href="mailto:ramon.ferrari@gmail.com" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.6rem 1.2rem; background: rgba(232, 132, 90, 0.15); border: 1px solid rgba(232, 132, 90, 0.4); border-radius: 6px; color: #e8845a; text-decoration: none; font-size: 0.85rem; transition: all 0.3s; min-width: 120px;">
+      <carbon:email style="width: 1.1em; height: 1.1em;" /> Email
+    </a>
+    <a href="https://linkedin.com/in/ramonferrari" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.6rem 1.2rem; background: rgba(91, 164, 245, 0.15); border: 1px solid rgba(91, 164, 245, 0.4); border-radius: 6px; color: #5ba4f5; text-decoration: none; font-size: 0.85rem; transition: all 0.3s; min-width: 120px;">
+      <carbon:logo-linkedin style="width: 1.1em; height: 1.1em;" /> LinkedIn
+    </a>
+  </div>
+</div>
 
 </div>
+
