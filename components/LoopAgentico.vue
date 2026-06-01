@@ -60,7 +60,7 @@
 
       <!-- Center label -->
       <text x="250" y="244" text-anchor="middle" class="center-title">Loop</text>
-      <text x="250" y="264" text-anchor="middle" class="center-sub">agêntico</text>
+      <text x="250" y="284" text-anchor="middle" class="center-sub">agêntico</text>
     </svg>
   </div>
 </template>
@@ -208,7 +208,7 @@ onUnmounted(() => clearInterval(interval))
 
 .node-label {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 11px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -222,7 +222,7 @@ onUnmounted(() => clearInterval(interval))
 
 .center-title {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 22px;
+  font-size: 42px;
   font-weight: 700;
   fill: var(--rf-text-primary);
   letter-spacing: -0.03em;
@@ -231,7 +231,7 @@ onUnmounted(() => clearInterval(interval))
 .center-sub {
   font-family: "TeX Gyre Pagella", Georgia, serif;
   font-style: italic;
-  font-size: 14px;
+  font-size: 32px;
   fill: var(--rf-text-muted);
 }
 </style>

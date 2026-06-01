@@ -2,7 +2,7 @@
 colorSchema: both
 themeConfig:
   appearance: dark
-  shortTitle: "Seu terminal aumentado pelo Claude Code"
+  shortTitle: "Claude Code: Seu terminal turbinado"
 fonts:
   sans: Space Grotesk
   serif: Space Grotesk
@@ -13,7 +13,7 @@ class: text-left
 
 <CoverSlide
   eyebrow="FGV EAESP"
-  title="Seu terminal aumentado pelo Claude Code"
+  title="Claude Code: Seu terminal turbinado"
   subtitle="Claude code e seu papel no desenvolvimento assistido por IA"
   presenter="R. M. Ferrari"
   location="São Paulo, SP"
@@ -64,7 +64,7 @@ y="200"
 
 ---
 
-# Tanto faz o modelo? Atenção aos "flash" vs "pro"
+# Modelo leve × pro
 
 <ModelComparison />
 
@@ -72,29 +72,29 @@ y="200"
 
 # Os Dois Conflitos da IA
 
-<div class="flex items-center gap-4 mt-4" style="font-size: 0.8rem; line-height: 1.4;">
-<div class="glass p-3 flex-1" style="border-color: rgba(99,211,161,0.45); text-align: center;">
-<span style="color: #63d3a1; font-weight: 700;">🧠 Fiel ao treinamento</span>  
-Ser completa. Agradar. Parecer confiante. Nunca deixar uma pergunta sem resposta.
+<div class="flex items-center gap-8 mt-4" style="font-size: 1.6rem; line-height: 1.6;">
+<div class="glass p-6 flex-1" style="border-color: rgba(99,211,161,0.45); text-align: center;">
+<span style="color: #63d3a1; font-weight: 700;">🧠 Fiel ao treinamento</span><br> 
+Ser completa. Agradar. Parecer confiante. Nunca deixar de responder.
 </div>
-<div style="font-size: 1rem; font-weight: 700; flex-shrink: 0; text-align: center; opacity: 0.45; letter-spacing: 0.1em;">vs</div>
-<div class="glass p-3 flex-1" style="border-color: rgba(226,248,27,0.45); text-align: center;">
+<div style="font-size: 2rem; font-weight: 700; flex-shrink: 0; text-align: center; opacity: 0.45; letter-spacing: 0.1em;">vs</div>
+<div class="glass p-6 flex-1" style="border-color: rgba(226,248,27,0.45); text-align: center;">
 <span style="color: #e2f81b; font-weight: 700;">📋 Seguir suas instruções</span>  
 Ser precisa. Dizer N/E. Citar a fonte. Usar só o que está no documento.
 </div>
 </div>
-<div class="grid grid-cols-3 gap-2 mt-3" style="font-size: 0.7rem; line-height: 1.35;">
-<div v-click class="glass p-3" style="border-top: 2px solid #EC635E;">
+<div class="grid grid-cols-3 gap-2 mt-3" style="font-size: 0.85rem; line-height: 1.35;">
+<div v-click class="glass p-5" style="border-top: 3px solid #EC635E;">
 <span style="color: #EC635E; font-weight: 700;">"Se não encontrar, põe N/E"</span>
 Treinamento: resposta vazia não agrada.
 → IA inventa **8%** com total confiança.
 </div>
-<div v-click class="glass p-3" style="border-top: 2px solid #EC635E;">
+<div v-click class="glass p-5" style="border-top: 3px solid #EC635E;">
 <span style="color: #EC635E; font-weight: 700;">"Extraia só o valor total"</span>
 Treinamento: ser completo é ser útil.
 → IA adiciona interpretações e avisos que ninguém pediu.
 </div>
-<div v-click class="glass p-3" style="border-top: 2px solid #EC635E;">
+<div v-click class="glass p-5" style="border-top: 3px solid #EC635E;">
 <span style="color: #EC635E; font-weight: 700;">"Use só o documento enviado"</span>
 Treinamento: multas ficam entre 5–10%.
 → IA "preenche" cláusula vaga com conhecimento geral.
@@ -114,6 +114,7 @@ class: "text-center"
 
 <div class="grid gap-8 mt-4 items-center" style="grid-template-columns: 1fr 1fr;">
 <div class="rf-panel">
+
 **Modelo de chat tradicional**
 - Você escreve uma mensagem
 - O modelo responde com texto
@@ -135,19 +136,20 @@ class: "text-center"
 <LoopChatManual />
 
 ---
+
 # O que é o Claude Code?
 
 <div class="grid gap-4 mt-4 items-center" style="grid-template-columns: 3fr 2fr;">
-<div class="prose">
+<div>
 <p class="!mt-0">
 <strong>Claude Code</strong> é um <strong>ambiente de codificação agêntico</strong> da Anthropic que vive no seu terminal.
 </p>
 <ul>
   <li v-click>Diferente de um chatbot: ele <strong>lê arquivos, executa comandos, faz alterações e resolve problemas</strong> de forma autônoma.</li>
   <li v-click>Você descreve o que quer → Claude explora, planeja e implementa.</li>
-  <li v-click>Disponível via CLI (<code>claude</code>), e integrações com VS Code / JetBrains.</li>
+  <li v-click>Disponível via terminal, e integrações com VS Code ou JetBrains.</li>
 </ul>
-<Callout v-click type="info" class="!mt-6">
+<Callout v-click type="info" class="!mt-3 !px-3 !py-2">
 Requer uma conta Anthropic (planos Pro, Team ou Enterprise para uso completo).
 </Callout>
 </div>
@@ -163,11 +165,11 @@ Requer uma conta Anthropic (planos Pro, Team ou Enterprise para uso completo).
 <div class="grid grid-cols-2 gap-8 mt-6">
 <div>
 <HighlightStat value="40%+" label="Aumento de produtividade" class="!text-5xl" />
-<p class="rf-muted text-sm text-center -mt-2">Reportado por times da Anthropic que seguem as melhores práticas.</p>
+<p class="rf-muted text-sm text-center -mt-2">Aumento de produtividade reportado por times da Anthropic que seguem as melhores práticas.</p>
 </div>
 <div>
 <HighlightStat value="30%" label="Mais rápido para debuggar" class="!text-5xl" />
-<p class="rf-muted text-sm text-center -mt-2">Usando o ciclo de feedback adaptativo do agente.</p>
+<p class="rf-muted text-sm text-center -mt-2">30% mais rápido para debuggar usando o ciclo de feedback adaptativo do agente.</p>
 </div>
 </div>
 
@@ -196,13 +198,22 @@ Requer uma conta Anthropic (planos Pro, Team ou Enterprise para uso completo).
   </div>
 </div>
 </div>
+
 ---
+
 # A Restrição Fundamental: O Context Window
 
-<div class="grid gap-8 mt-4 items-center" style="grid-template-columns: 2fr 3fr;">
+<div class="flex flex-col items-center justify-center h-full gap-4">
+<Contextdesk />
+<p class="text-center rf-muted" style="max-width: 600px;">Pense na janela de contexto como a memória de trabalho (RAM), não como um HD.</p>
+</div>
 
-<div class="prose">
-<ul>
+---
+
+# O Context Window: Detalhes
+
+<div>
+<ul style="font-size: 1.1rem; line-height: 1.8;">
   <li>A <em>constraint</em> mais importante: <strong>o context window se enche rapidamente</strong>.</li>
   <li>Cada mensagem, arquivo lido e saída de comando consome tokens.</li>
   <li v-click>A performance <strong>degrada</strong> à medida que o contexto se aproxima do limite.</li>
@@ -215,26 +226,19 @@ Gerenciar o contexto é a habilidade #1 do Claude Code.
 
 </div>
 
-<div>
-<Contextdesk />
-<p class="text-center rf-muted -mt-2">Pense na janela de contexto como a memória de trabalho (RAM), não como um HD.</p>
-</div>
-
-</div>
-
 ---
 layout: center
 class: "text-center"
 ---
 
-# Configuração e Melhores Práticas
+# Uso do Claude Code
 
 ---
 
 # Instalação e Configuração Inicial
 
 <div class="grid grid-cols-2 gap-8 items-center">
-<div class="prose">
+<div>
 <p>
 Execute sempre <strong>dentro do diretório raiz do projeto</strong>. O agente performa muito melhor sobre uma árvore de código funcional e testável.
 </p>
@@ -244,7 +248,7 @@ O comando <code>/init</code> gera um <code>CLAUDE.md</code> inicial analisando a
 </div>
 <TerminalBlock
 lang="bash"
-content="
+:content='`
 # Instalação global via npm
 npm install -g @anthropic-ai/claude-code
 
@@ -254,7 +258,7 @@ claude auth login
 # Iniciar no diretório do projeto
 cd meu-projeto
 claude
-"
+`'
 />
 </div>
 
@@ -351,8 +355,11 @@ Vamos à prática. A instalação é simples via npm. O ponto crítico é: sempr
 </div>
 </div>
 
+
+
 ---
-# Modos de Permissão
+
+#Modos de Permissão
 
 <p>Controle o nível de autonomia do agente com 4 modos de permissão. Use <code>/permissions</code> para mudar de modo durante a sessão.</p>
 
@@ -454,7 +461,7 @@ Este é o padrão de workflow mais importante. Deixar o agente pular direto para
 <p class="!mt-0">O agente para quando o trabalho "parece pronto". Sem verificação, <strong>VOCÊ</strong> vira o loop de feedback.</p>
 
 <div class="grid grid-cols-2 gap-8 items-center mt-4">
-<div class="prose">
+<div>
 <p><strong>Estratégias de verificação explícita:</strong></p>
 <ul>
   <li><strong>Testes:</strong> "...implemente e <strong>execute os testes</strong>. corrija as falhas."</li>
@@ -477,12 +484,15 @@ class: "text-center"
 
 # Funcionalidades Avançadas
 
+
+
 ---
-# Gerenciamento de Contexto: Comandos Essenciais
+
+#Gerenciamento de Contexto: Comandos Essenciais
 
 <div class="grid grid-cols-2 gap-6">
 
-<div class="prose">
+<div>
 <ul>
   <li><code>/clear</code>: Reseta o context window completamente. <strong>Use entre tarefas não relacionadas.</strong></li>
   <li><code>/compact</code>: Comprime o histórico, preservando o mais importante.</li>
@@ -491,7 +501,7 @@ class: "text-center"
 </ul>
 </div>
 
-<div class="prose">
+<div>
 <Callout type="warning" class="!h-full">
 <h4 class="!mt-0">Regra Prática</h4>
 Se você corrigiu o agente mais de <strong>2 vezes</strong> sobre o mesmo problema, pare. Use <code>/clear</code> e reescreva o prompt com o que você aprendeu.
@@ -501,8 +511,11 @@ Uma sessão limpa com um prompt melhor quase sempre supera uma sessão longa com
 </div>
 
 </div>
+
+
 ---
-# Padrões Comuns de Falha (E Como Evitá-los)
+
+#Padrões Comuns de Falha (E Como Evitá-los)
 
 <div class="grid grid-cols-2 gap-4 mt-4">
 
@@ -530,11 +543,14 @@ Uma sessão limpa com um prompt melhor quase sempre supera uma sessão longa com
 <p class="text-sm font-bold text-green-400 !mb-0">✅ Solução: Use subagentes para exploração ou dê um escopo claro.</p>
 </div>
 </div>
+
+
 ---
-# Subagentes: Delegação Inteligente
+
+#Subagentes: Delegação Inteligente
 
 <div class="grid grid-cols-2 gap-8 items-center">
-<div class="prose">
+<div>
 <p>Subagentes são como assistentes que rodam em <strong>context windows próprios e isolados</strong>, retornando apenas um resumo para o agente principal.</p>
 <p class="!mt-4"><strong>Casos de uso:</strong></p>
 <ul>
@@ -547,14 +563,17 @@ Uma sessão limpa com um prompt melhor quase sempre supera uma sessão longa com
 <p class="text-xs rf-muted">O contexto principal não é poluído pela exploração do subagente.</p>
 </div>
 </div>
+
+
 ---
-# Sessões Paralelas com Git Worktrees
+
+#Sessões Paralelas com Git Worktrees
 
 <p class="!mt-0">A dica #1 do criador do Claude Code para máxima produtividade: trabalhe em múltiplas tarefas simultaneamente.</p>
 <div class="grid grid-cols-2 gap-8 items-center mt-4">
 <TerminalBlock
 lang="bash"
-content="
+:content='`
 # Criar worktrees para sessões paralelas
 git worktree add ../proj-feature-auth feature/auth
 git worktree add ../proj-bugfix-login bugfix/login
@@ -562,9 +581,9 @@ git worktree add ../proj-bugfix-login bugfix/login
 # Iniciar Claude em cada worktree independentemente
 cd ../proj-feature-auth && claude
 cd ../proj-bugfix-login && claude
-"
+`'
 />
-<div class="prose">
+<div>
 <p><strong>Benefícios:</strong></p>
 <ul>
   <li>Edições não colidem entre as sessões.</li>
@@ -579,8 +598,11 @@ class: "text-center"
 ---
 
 # Recapitulação e Próximos Passos
+
+
 ---
-# Os 10 Mandamentos do Claude Code
+
+#Os 10 Mandamentos do Claude Code
 <div class="grid grid-cols-2 gap-x-8 gap-y-2 mt-4 text-left prose-sm">
   <div v-click class="flex items-center gap-2">1. Gerencie o <strong>context window</strong> acima de tudo.</div>
   <div v-click class="flex items-center gap-2">2. <strong>Explore</strong>, depois <strong>planeje</strong>, depois implemente.</div>
@@ -598,8 +620,11 @@ class: "text-center"
 <Callout type="info">Os 3 mais importantes: gerenciar <strong>contexto</strong>, separar <strong>planejamento</strong> da implementação, e incluir <strong>verificação</strong>.</Callout>
 </div>
 
+
+
 ---
-# Roteiro de Aprendizado Sugerido
+
+#Roteiro de Aprendizado Sugerido
 <Timeline
   :items="[
     { week: 1, title: 'Fundamentos', tasks: ['Instalar e configurar', 'Criar seu primeiro CLAUDE.md', 'Praticar os modos de permissão', 'Dominar /clear e /rewind'] },

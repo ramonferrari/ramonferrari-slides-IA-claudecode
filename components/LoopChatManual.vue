@@ -1,5 +1,5 @@
 <template>
-  <div class="loop-container rf-grid">
+  <div class="loop-container">
     <div class="loop-track">
       <div
         v-for="(step, i) in steps"
@@ -60,10 +60,11 @@ let step = 0
 
 function advance() {
   arrowFired.value = Array(steps.length - 1).fill(false)
-  activeStep.value = step % steps.length
-  if (step % steps.length < steps.length - 1) {
-    setTimeout(() => { arrowFired.value[step % steps.length] = true }, 200)
+  const currentStep = step % steps.length
+  if (currentStep > 0) {
+    arrowFired.value[currentStep - 1] = true
   }
+  activeStep.value = currentStep
   step++
 }
 
@@ -82,9 +83,6 @@ onUnmounted(() => clearInterval(interval))
   gap: 1.6rem;
   padding: 2.4rem 2rem;
   border-radius: var(--rf-radius);
-  background:
-    radial-gradient(circle at 60% 0%, var(--rf-glow) 0%, transparent 55%),
-    var(--rf-bg);
   min-height: 260px;
   justify-content: center;
 }

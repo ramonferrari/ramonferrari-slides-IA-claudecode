@@ -22,7 +22,7 @@ defineProps<{
 <style scoped>
 .rf-highlight {
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 0.5rem;
 }
 
 .rf-value {
@@ -33,8 +33,10 @@ defineProps<{
 }
 
 .rf-caption {
-  margin-top: 1rem;
-  opacity: 0.7;
+  margin-top: 0.5rem;
+  opacity: 1 !important;
   font-size: 1.3rem;
+  font-weight: 500;
+  color: #e0e0e0 !important;
 }
 </style>
