@@ -20,21 +20,6 @@
       </div>
     </div>
 
-    <div class="loop-back glass">
-      <span class="loop-label rf-eyebrow">loop infinito</span>
-      <svg class="loop-arrow" viewBox="0 0 520 32" fill="none" preserveAspectRatio="none">
-        <path
-          d="M8 8 L512 8 L512 24 L8 24 L8 8"
-          stroke="var(--rf-primary)"
-          stroke-width="1.5"
-          fill="none"
-          stroke-dasharray="6 4"
-          class="dash-path"
-        />
-        <path d="M20 24 L8 16 L20 8" stroke="var(--rf-primary)" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
-      </svg>
-    </div>
-
     <div class="verdict rf-reveal-3">
       <span class="rf-eyebrow" style="color: var(--rf-text-muted)">resultado</span>
       <p class="verdict-text">Você virou o sistema nervoso periférico do modelo.</p>
@@ -190,10 +175,14 @@ onUnmounted(() => clearInterval(interval))
   max-width: 600px;
 }
 
+.verdict .rf-eyebrow {
+  font-size: 0.85rem;
+}
+
 .verdict-text {
   font-family: "TeX Gyre Pagella", Georgia, serif;
   font-style: italic;
-  font-size: 0.95rem;
+  font-size: 1.3rem;
   color: var(--rf-text-muted);
   margin: 0.3rem 0 0;
 }

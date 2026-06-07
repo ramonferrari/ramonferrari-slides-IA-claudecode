@@ -139,9 +139,7 @@ onUnmounted(() => clearInterval(interval))
   justify-content: center;
   padding: 1.6rem;
   border-radius: var(--rf-radius);
-  background:
-    radial-gradient(circle at 50% 50%, var(--rf-glow) 0%, transparent 60%),
-    var(--rf-bg);
+  background: transparent;
 }
 
 .loop-svg {

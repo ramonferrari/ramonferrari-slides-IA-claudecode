@@ -7,22 +7,19 @@ defineProps<{
 
 <template>
   <div class="rf-highlight">
-
     <div class="rf-value">
-      {{ value }}
+      <AnimatedNumber :value="value" />
     </div>
-
     <div class="rf-caption">
       {{ caption }}
     </div>
-
   </div>
 </template>
 
 <style scoped>
 .rf-highlight {
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 4rem;
 }
 
 .rf-value {
@@ -33,10 +30,8 @@ defineProps<{
 }
 
 .rf-caption {
-  margin-top: 0.5rem;
-  opacity: 1 !important;
+  margin-top: 1rem;
+  opacity: 0.7;
   font-size: 1.3rem;
-  font-weight: 500;
-  color: #e0e0e0 !important;
 }
 </style>

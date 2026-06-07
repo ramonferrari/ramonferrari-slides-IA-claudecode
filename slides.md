@@ -72,34 +72,66 @@ y="200"
 
 # Os Dois Conflitos da IA
 
-<div class="flex items-center gap-8 mt-4" style="font-size: 1.6rem; line-height: 1.6;">
-<div class="glass p-6 flex-1" style="border-color: rgba(99,211,161,0.45); text-align: center;">
-<span style="color: #63d3a1; font-weight: 700;">🧠 Fiel ao treinamento</span><br> 
-Ser completa. Agradar. Parecer confiante. Nunca deixar de responder.
+<div class="flex items-center gap-4 mt-4" style="font-size: 0.8rem; line-height: 1.4;">
+
+<div class="glass p-3 flex-1" style="border-color: color-mix(in srgb, var(--rf-primary) 45%, transparent); text-align: center;">
+
+<span style="color: var(--rf-primary); font-weight: 700;">🧠 Fiel ao treinamento</span>  
+Ser completa. Agradar. Parecer confiante. Nunca deixar uma pergunta sem resposta.
+
 </div>
-<div style="font-size: 2rem; font-weight: 700; flex-shrink: 0; text-align: center; opacity: 0.45; letter-spacing: 0.1em;">vs</div>
-<div class="glass p-6 flex-1" style="border-color: rgba(226,248,27,0.45); text-align: center;">
-<span style="color: #e2f81b; font-weight: 700;">📋 Seguir suas instruções</span>  
+
+<div style="font-size: 1rem; font-weight: 700; flex-shrink: 0; text-align: center; opacity: 0.45; letter-spacing: 0.1em;">vs</div>
+
+<div class="glass p-3 flex-1" style="border-color: color-mix(in srgb, var(--rf-highlight) 45%, transparent); text-align: center;">
+
+<span style="color: var(--rf-highlight); font-weight: 700;">📋 Seguir suas instruções</span>  
 Ser precisa. Dizer N/E. Citar a fonte. Usar só o que está no documento.
+
 </div>
+
 </div>
-<div class="grid grid-cols-3 gap-2 mt-3" style="font-size: 0.85rem; line-height: 1.35;">
-<div v-click class="glass p-5" style="border-top: 3px solid #EC635E;">
+
+<div class="grid grid-cols-3 gap-2 mt-3" style="font-size: 0.7rem; line-height: 1.35;">
+
+<div v-click class="glass p-3" style="border-top: 2px solid #EC635E;">
+
 <span style="color: #EC635E; font-weight: 700;">"Se não encontrar, põe N/E"</span>
+
 Treinamento: resposta vazia não agrada.
+
 → IA inventa **8%** com total confiança.
+
 </div>
-<div v-click class="glass p-5" style="border-top: 3px solid #EC635E;">
+
+<div v-click class="glass p-3" style="border-top: 2px solid #EC635E;">
+
 <span style="color: #EC635E; font-weight: 700;">"Extraia só o valor total"</span>
+
 Treinamento: ser completo é ser útil.
+
 → IA adiciona interpretações e avisos que ninguém pediu.
+
 </div>
-<div v-click class="glass p-5" style="border-top: 3px solid #EC635E;">
+
+<div v-click class="glass p-3" style="border-top: 2px solid #EC635E;">
+
 <span style="color: #EC635E; font-weight: 700;">"Use só o documento enviado"</span>
+
 Treinamento: multas ficam entre 5–10%.
+
 → IA "preenche" cláusula vaga com conhecimento geral.
+
 </div>
+
 </div>
+
+<!--
+Sabe por que a IA alucina com tanta frequência? Porque ela foi literalmente treinada pra te agradar. Quando você pergunta 'qual é a multa rescisória?' — a resposta que te agrada é um número. A resposta honesta, se o contrato não define, é: 'não existe.'
+
+Antes de falar nos limites técnicos, é importante entender o conflito de objetivos. A IA não falha por acidente — ela falha porque foi treinada para um objetivo (agradar, ser completa) que às vezes entra em rota de colisão com o que você precisa (precisão, rastreabilidade, contenção).
+-->
+
 ---
 layout: center
 class: "text-center"
@@ -150,7 +182,7 @@ class: "text-center"
   <li v-click>Disponível via terminal, e integrações com VS Code ou JetBrains.</li>
 </ul>
 <Callout v-click type="info" class="!mt-3 !px-3 !py-2">
-Requer uma conta Anthropic (planos Pro, Team ou Enterprise para uso completo).
+Requer uma conta Anthropic (paga).
 </Callout>
 </div>
 <div v-click>
@@ -160,9 +192,9 @@ Requer uma conta Anthropic (planos Pro, Team ou Enterprise para uso completo).
 
 ---
 
-# Por que Claude Code importa?
+# Por que usar o Claude Code?
 
-<div class="grid grid-cols-2 gap-8 mt-6">
+<div class="grid grid-cols-2 gap-8 mt-0 items-start">
 <div>
 <HighlightStat value="40%+" label="Aumento de produtividade" class="!text-5xl" />
 <p class="rf-muted text-sm text-center -mt-2">Aumento de produtividade reportado por times da Anthropic que seguem as melhores práticas.</p>
@@ -173,27 +205,22 @@ Requer uma conta Anthropic (planos Pro, Team ou Enterprise para uso completo).
 </div>
 </div>
 
-<div class="mt-8">
+<div class="mt-2">
 <Subtitle text="Casos de uso reais" />
-<div class="grid grid-cols-5 gap-3 mt-3 text-center" style="font-size: 0.75rem;">
+<div class="grid grid-cols-5 gap-3 mt-3 text-center" style="font-size: 0.6rem;">
   <div v-click class="glass p-3">
-    <div class="text-2xl mb-1">🗺️</div>
     Onboarding e Exploração de Codebases
   </div>
   <div v-click class="glass p-3">
-    <div class="text-2xl mb-1">🔀</div>
     Migração de Frameworks
   </div>
   <div v-click class="glass p-3">
-    <div class="text-2xl mb-1">🕵️</div>
     Revisão de Código Automatizada
   </div>
   <div v-click class="glass p-3">
-    <div class="text-2xl mb-1">🧪</div>
     Geração e Correção de Testes
   </div>
   <div v-click class="glass p-3">
-    <div class="text-2xl mb-1">📊</div>
     Análise de Dados via CLI
   </div>
 </div>
@@ -386,25 +413,25 @@ class: "text-center"
 ---
 
 # Explorar → Planejar → Implementar → Commitar
-
+## 
 <p class="text-left mt-4">O workflow de 4 fases recomendado pela Anthropic para evitar resolver o problema errado.</p>
 <div class="prose text-left text-sm">
 <ol>
   <li class="!pl-0">
-    <strong class="text-green-300">Explorar (Plan mode)</strong>
-    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: white;">leia /src/auth e entenda como gerenciamos sessões.</code></p>
+    <strong style="color: var(--rf-primary);">Explorar (Plan mode)</strong>
+    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: var(--rf-text-secondary);">leia /src/auth e entenda como gerenciamos sessões.</code></p>
   </li>
   <li class="!pl-0">
-    <strong class="text-yellow-300">Planejar (Plan mode)</strong>
-    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: white;">Quero adicionar OAuth com Google. Quais arquivos precisam mudar? Crie um plano detalhado.</code></p>
+    <strong style="color: var(--rf-highlight);">Planejar (Plan mode)</strong>
+    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: var(--rf-text-secondary);">Quero adicionar OAuth com Google. Quais arquivos precisam mudar? Crie um plano detalhado.</code></p>
   </li>
     <li class="!pl-0">
-    <strong class="text-blue-300">Implementar (Default/AcceptEdits)</strong>
-    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: white;">Implemente o fluxo OAuth do seu plano. Escreva testes para o callback handler e corrija qualquer falha.</code></p>
+    <strong style="color: #63a5f5;">Implementar (Default/AcceptEdits)</strong>
+    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: var(--rf-text-secondary);">Implemente o fluxo OAuth do seu plano. Escreva testes para o callback handler e corrija qualquer falha.</code></p>
   </li>
     <li class="!pl-0">
-    <strong class="text-purple-300">Commitar</strong>
-    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: white;">Faça o commit com uma mensagem descritiva e abra um PR.</code></p>
+    <strong style="color: #c084fc;">Commitar</strong>
+    <p class="!text-xs !opacity-100 !-mt-1"><code style="color: var(--rf-text-secondary);">Faça o commit com uma mensagem descritiva e abra um PR.</code></p>
   </li>
 </ol>
 <p style="margin-top: 1.5rem; opacity: 1;">Separe exploração e planejamento da implementação.</p>
@@ -448,10 +475,10 @@ Este é o padrão de workflow mais importante. Deixar o agente pular direto para
 <div>
 <p><strong>Estratégias de verificação explícita:</strong></p>
 <ul>
-  <li><strong>Testes:</strong> <span style="color: #e2f81b;">"...Implemente e <strong>execute os testes</strong>. Corrija as falhas."</span></li>
-  <li><strong>Build/Lint:</strong> <span style="color: #e2f81b;">"...implemente e <strong>verifique que <code style="color: #63d3a1;">npm run build</code> passa</strong> sem erros."</span></li>
-  <li><strong>UI Visual:</strong> <span style="color: #e2f81b;">"<span style="color: #63d3a1;">[cole screenshot]</span> ...implemente e <strong>compare com o design original</strong>."</span></li>
-  <li><strong>Causa Raiz:</strong> <span style="color: #e2f81b;">"O build falha com erro <span style="color: #63d3a1;">[erro]</span>. <strong>Corrija a causa raiz</strong>, não apenas suprima o erro."</span></li>
+  <li><strong>Testes:</strong> <span style="color: var(--rf-primary);">"...Implemente e <strong>execute os testes</strong>. Corrija as falhas."</span></li>
+  <li><strong>Build/Lint:</strong> <span style="color: var(--rf-primary);">"...implemente e <strong>verifique que <code style="color: var(--rf-highlight);">npm run build</code> passa</strong> sem erros."</span></li>
+  <li><strong>UI Visual:</strong> <span style="color: var(--rf-primary);">"<span style="color: var(--rf-highlight);">[cole screenshot]</span> ...implemente e <strong>compare com o design original</strong>."</span></li>
+  <li><strong>Causa Raiz:</strong> <span style="color: var(--rf-primary);">"O build falha com erro <span style="color: var(--rf-highlight);">[erro]</span>. <strong>Corrija a causa raiz</strong>, não apenas suprima o erro."</span></li>
 </ul>
 
 </div>
@@ -545,13 +572,13 @@ Uma sessão limpa com um prompt melhor quase sempre supera uma sessão longa com
 <div class="text-center">
 <svg viewBox="0 0 500 250" class="mx-auto" style="max-width: 100%;">
   <!-- Main Context Box -->
-  <rect x="20" y="50" width="180" height="150" fill="none" stroke="#e2f81b" stroke-width="2" rx="8"/>
-  <text x="110" y="78" text-anchor="middle" fill="#e2f81b" font-weight="bold" font-size="5">Main</text>
-  <text x="110" y="100" text-anchor="middle" fill="#e2f81b" font-weight="bold" font-size="5">Context</text>
-  <text x="110" y="120" text-anchor="middle" fill="#9ca3af" font-size="3">(Preservado)</text>
-  <circle cx="110" cy="150" r="2" fill="#e2f81b"/>
-  <circle cx="110" cy="160" r="2" fill="#e2f81b"/>
-  <circle cx="110" cy="170" r="2" fill="#e2f81b"/>
+  <rect x="20" y="50" width="180" height="150" fill="none" stroke="var(--rf-primary)" stroke-width="2" rx="8"/>
+  <text x="110" y="78" text-anchor="middle" fill="var(--rf-primary)" font-weight="bold" font-size="5">Main</text>
+  <text x="110" y="100" text-anchor="middle" fill="var(--rf-primary)" font-weight="bold" font-size="5">Context</text>
+  <text x="110" y="120" text-anchor="middle" fill="var(--rf-text-muted)" font-size="3">(Preservado)</text>
+  <circle cx="110" cy="150" r="2" fill="var(--rf-primary)"/>
+  <circle cx="110" cy="160" r="2" fill="var(--rf-primary)"/>
+  <circle cx="110" cy="170" r="2" fill="var(--rf-primary)"/>
   
   <!-- Subagent Context Box -->
   <rect x="300" y="50" width="180" height="150" fill="none" stroke="#ec4899" stroke-width="2" rx="8" stroke-dasharray="5,5"/>
@@ -580,6 +607,7 @@ Uma sessão limpa com um prompt melhor quase sempre supera uma sessão longa com
 ---
 
 # Sessões Paralelas com Git Worktrees
+##
 
 <p class="!mt-0">A dica #1 do criador do Claude Code para máxima produtividade: trabalhe em múltiplas tarefas simultaneamente.</p>
 <div class="grid grid-cols-2 gap-8 items-center mt-4">
@@ -646,8 +674,8 @@ class: "text-center"
 </div>
 
 <div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.2rem; width: 100%;">
-  <div style="font-size: 1.6rem; color: #e2f81b; font-weight: 700; text-align: center;">Ramon Ferrari</div>
-  <div style="width: 80px; height: 1px; background: linear-gradient(90deg, transparent, #e2f81b, transparent);"></div>
+  <div style="font-size: 1.6rem; color: var(--rf-primary); font-weight: 700; text-align: center;">Ramon Ferrari</div>
+  <div style="width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--rf-primary), transparent);"></div>
   <div style="display: flex; gap: 1.2rem; justify-content: center;">
     <a href="mailto:ramon.ferrari@gmail.com" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.6rem 1.2rem; background: rgba(232, 132, 90, 0.15); border: 1px solid rgba(232, 132, 90, 0.4); border-radius: 6px; color: #e8845a; text-decoration: none; font-size: 0.85rem; transition: all 0.3s; min-width: 120px;">
       <carbon:email style="width: 1.1em; height: 1.1em;" /> Email
